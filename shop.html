@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>J&M Stores — Accessories</title>
+  <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,600&display=swap" rel="stylesheet">
+  <!-- Bootstrap & FontAwesome -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <style>
+    html { scroll-behavior: smooth; }
+    :root {
+      --black: #000;
+      --white: #fff;
+      --green: #28a745;
+      --red: #dc3545;
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: var(--white);
+      color: var(--black);
+    }
+    /* Header */
+    header {
+      display: flex; align-items: center;
+      padding: 1rem 2rem;
+      background: var(--black);
+      border-bottom: 4px solid var(--green);
+      animation: borderPulse 4s infinite;
+    }
+    @keyframes borderPulse {
+      0%,100% { border-color: var(--green); }
+      50% { border-color: var(--red); }
+    }
+    .title {
+      font-size: 1.5rem; font-weight: 600;
+      text-transform: uppercase;
+      color: var(--white);
+      padding: .5rem 1rem;
+      border: 2px solid var(--green);
+      border-radius: 4px;
+      animation: colorCycle 5s infinite;
+      margin-right: 1rem;
+    }
+    @keyframes colorCycle {
+      0%,100% { color: var(--white); border-color: var(--green); }
+      33%      { color: var(--red);   border-color: var(--red);   }
+      66%      { color: var(--green); border-color: var(--green); }
+    }
+    .logo img { height: 80px; transition: transform .3s; }
+    .logo img:hover { transform: scale(1.1); }
+    .spacer { width: 150px; }
+
+    /* Carousel */
+    #heroCarousel .carousel-item {
+      position: relative;
+    }
+    #heroCarousel img {
+      width: 100%; height: 520px; object-fit: cover;
+    }
+    #heroCarousel .carousel-caption {
+      background: rgba(0,0,0,0.4);
+      padding: 1rem;
+      border-radius: 4px;
+    }
+    #heroCarousel .top-caption {
+      top: 15%; bottom: auto;
+    }
+
+    /* Benefits */
+    .fa-2x { color: var(--green); }
+    .bg-light .fa { color: var(--green)!important; }
+    h5 { color: var(--black); }
+
+    /* Products */
+    #products { background: #f8f8f8; }
+    .all-products-heading {
+      color: var(--green);
+      font-size: 2.5rem; font-weight: 600;
+      text-transform: uppercase;
+      margin: 2rem auto;
+      text-align: center;
+      border-bottom: 4px solid var(--red);
+      display: inline-block; padding-bottom: .25rem;
+      animation: slideIn 1s ease-out;
+    }
+    @keyframes slideIn {
+      from { transform: translateY(-20px); opacity: 0; }
+      to   { transform: translateY(0);       opacity: 1; }
+    }
+    .product-item {
+      border: 2px solid transparent;
+      transition: border-color .3s, transform .3s;
+    }
+    .product-item:hover {
+      border-color: var(--green);
+      transform: translateY(-5px);
+    }
+    .product-item .card-title a,
+    .product-item .fw-bold {
+      color: var(--green) !important;
+    }
+
+
+ </style>
+</head>
+<body>
+  <header style="display:flex; align-items:center; padding:1rem 2rem; background:#000;">
+        <!-- Spacer (if you still need it) -->
+    <div class="spacer" style="width:150px;"></div>
+    <!-- Customer Service on the far left -->
+
+    <!-- Site Title -->
+    <div class="title" style="margin-right:2rem;">J&amp;M Stores</div>
+
+    <!-- Logo -->
+    <div class="logo" style="flex:1; text-align:center;">
+      <img src="J&M logo.png" alt="J&M Logo" style="height:80px;">
+    </div>
+
+        <div style="
+      font-family: 'Poppins', sans-serif;
+      font-size: 1rem;
+      font-weight: 600;
+      color: #fff;
+      margin-right: 2rem;
+    ">
+      <small style="display:block; font-weight:400;">Customer Service</small>
+      <strong>+961 81 481 185</strong>
+    </div>
+
+    <!-- Spacer (if you still need it) -->
+    <div class="spacer" style="width:150px;"></div>
+  </header>
+
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="top">
+    <div class="container">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="main.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link active" href="#products">Shop</a></li>
+          <li class="nav-item"><a class="nav-link" href="cart.html">Cart</a></li>
+          <li class="nav-item"><a class="nav-link" href="checkout.html">Checkout</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+                <!-- Search Bar -->
+      <form class="flex-fill mx-3" role="search" onsubmit="return false;">
+        <div class="input-group">
+          <input id="searchInput" type="search" class="form-control" placeholder="Search products">
+          <button type="button" class="btn btn-outline-secondary"><i class="fa fa-search"></i></button>
+        </div>
+      </form>
+        <div class="d-none d-lg-flex">
+          <a href="cart.html" class="btn btn-link text-white px-0 position-relative">
+            <i class="fa fa-shopping-cart"></i>
+            <span id="cartBadge" class="badge bg-secondary rounded-circle position-absolute top-0 start-100 translate-middle">0</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <!-- Hero Carousel -->
+  <div id="heroCarousel" class="carousel slide carousel-fade mb-4" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active position-relative">
+        <img src="img/AE.png" class="d-block w-100" alt="American Eagle Clothing">
+        <div class="carousel-caption d-none d-md-block">
+          <h1>American Eagle Clothing</h1>
+          <p>Premium American style, only at J&amp;M Shop.</p>
+          <a class="btn btn-outline-light" href="#products">Shop Now</a>
+        </div>
+      </div>
+      <div class="carousel-item position-relative">
+        <img src="img/AE.png" class="d-block w-100" alt="American Eagle Clothing">
+        <div class="carousel-caption d-none d-md-block">
+          <h1>American Eagle Clothing</h1>
+          <p>Discover timeless outfits for every season.</p>
+          <a class="btn btn-outline-light" href="#products">Shop Now</a>
+        </div>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+
+   <section class="py-5 bg-light">
+  <div class="container">
+    <div class="row text-center g-4">
+      <div class="col-md-4">
+        <i class="fa fa-check fa-2x text-success mb-2"></i>
+        <h5 class="text-success">7-10 Days Shipping</h5>
+      </div>
+      <div class="col-md-4">
+        <i class="fa fa-shipping-fast fa-2x text-success mb-2"></i>
+        <h5 class="text-success">3$ Delivery in Beirut</h5>
+      </div>
+      <div class="col-md-4">
+        <i class="fa fa-phone-volume fa-2x text-success mb-2"></i>
+        <h5 class="text-success">24/7 Support</h5>
+      </div>
+    </div>
+  </div>
+</section>
+  <!-- Product Grid -->
+<section id="products" class="py-5">
+  <div class="container">
+    <h2 class="mb-4 text-center">All Products and Items</h2>
+    <div class="row g-4">
+
+      <!-- 2nd White T-shirt -->
+      <div class="col-sm-6 col-lg-4">
+        <div class="card product-item h-100">
+          <a href="2white.html">
+            <img src="img/2white.png" class="card-img-top" alt="AE White T-shirt">
+          </a>
+          <div class="card-body text-center">
+            <h6 class="card-title">
+              <a href="2white.html" class="text-decoration-none">American Eagle White T-shirt</a>
+            </h6>
+            <p class="fw-bold">$10.00</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 1st White T-shirt -->
+      <div class="col-sm-6 col-lg-4">
+        <div class="card product-item h-100">
+          <a href="1white.html">
+            <img src="img/1white.png" class="card-img-top" alt="AE White T-shirt">
+          </a>
+          <div class="card-body text-center">
+            <h6 class="card-title">
+              <a href="1white.html" class="text-decoration-none">American Eagle White T-shirt</a>
+            </h6>
+            <p class="fw-bold">$10.00</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Light Blue T-shirt -->
+      <div class="col-sm-6 col-lg-4">
+        <div class="card product-item h-100">
+          <a href="lightblue.html">
+            <img src="img/lightblue.png" class="card-img-top" alt="AE Light Blue T-shirt">
+          </a>
+          <div class="card-body text-center">
+            <h6 class="card-title">
+              <a href="lightblue.html" class="text-decoration-none">American Eagle Light Blue T-shirt</a>
+            </h6>
+            <p class="fw-bold">$10.00</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Black Sweatshirt -->
+<div class="col-sm-6 col-lg-4">
+  <div class="card product-item h-100" data-tags="sweatshirt">
+    <a href="BlackSweat.html">
+      <img src="img/black_sweatshirt.png" class="card-img-top" alt="AE Black Sweatshirt">
+    </a>
+    <div class="card-body text-center">
+      <h6 class="card-title">
+        <a href="BlackSweat.html" class="text-decoration-none">American Eagle Black Sweatshirt</a>
+      </h6>
+      <p class="fw-bold">$13.00</p>
+    </div>
+  </div>
+</div>
+
+<!-- Grey T-shirt -->
+<div class="col-sm-6 col-lg-4">
+  <div class="card product-item h-100" data-tags="tshirt shirt">
+    <a href="GreyShirt.html">
+      <img src="img/grey.png" class="card-img-top" alt="AE Grey T-shirt">
+    </a>
+    <div class="card-body text-center">
+      <h6 class="card-title">
+        <a href="GreyShirt.html" class="text-decoration-none">American Eagle Grey T-shirt</a>
+      </h6>
+      <p class="fw-bold">$10.00</p>
+    </div>
+  </div>
+</div>
+
+<!-- Pink T-shirt -->
+<div class="col-sm-6 col-lg-4">
+  <div class="card product-item h-100" data-tags="tshirt shirt">
+    <a href="PinkShirt.html">
+      <img src="img/pink.png" class="card-img-top" alt="AE Pink T-shirt">
+    </a>
+    <div class="card-body text-center">
+      <h6 class="card-title">
+        <a href="PinkShirt.html" class="text-decoration-none">American Eagle Pink T-shirt</a>
+      </h6>
+      <p class="fw-bold">$10.00</p>
+    </div>
+  </div>
+</div>
+
+
+      <!-- (repeat for the rest of your products...) -->
+
+    </div>
+  </div>
+</section>
+
+
+  <!-- Footer -->
+  <footer class="bg-dark text-light py-4">
+    <div class="container text-center">&copy; 2025 J&amp;M Shop. All rights reserved.</div>
+  </footer>
+
+  <!-- Bootstrap & Cart + Search Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Cart in localStorage
+    let cart = JSON.parse(localStorage.getItem('jmCart')||'[]');
+    function saveCart(){
+      localStorage.setItem('jmCart', JSON.stringify(cart));
+      renderCartBadge();
+    }
+    function renderCartBadge(){
+      document.getElementById('cartBadge').textContent =
+        cart.reduce((sum,i)=>sum + i.qty, 0);
+    }
+    renderCartBadge();
+    document.querySelectorAll('.btn-add-to-cart').forEach(btn=>{
+      btn.addEventListener('click',()=>{
+        const id = btn.dataset.id,
+              name = btn.dataset.name,
+              price = parseFloat(btn.dataset.price),
+              qty = 1;
+        const found = cart.find(x=>x.id===id);
+        if(found) found.qty += qty;
+        else cart.push({id,name,price,qty});
+        saveCart();
+        alert(`${name} added to cart`);
+      });
+    });
+
+    // Live front-end search/filter
+    document.getElementById('searchInput').addEventListener('input', function(e){
+      const term = e.target.value.toLowerCase().trim();
+      document.querySelectorAll('.product-item').forEach(card=>{
+        const title = card.querySelector('.card-title a').textContent.toLowerCase();
+        const tags  = (card.dataset.tags||'').toLowerCase();
+        const match = title.includes(term) || tags.includes(term) || term===''; 
+        card.closest('.col-sm-6').style.display = match ? '' : 'none';
+      });
+      
+    });
+  </script>
+</body>
+</html>

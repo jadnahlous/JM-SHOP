@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>J&M Stores — Accessories</title>
+  <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,600&display=swap" rel="stylesheet">
+  <!-- Bootstrap & FontAwesome -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <style>
+    html { scroll-behavior: smooth; }
+    :root {
+      --black: #000;
+      --white: #fff;
+      --green: #28a745;
+      --red: #dc3545;
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: var(--white);
+      color: var(--black);
+    }
+    /* Header */
+    header {
+      display: flex; align-items: center;
+      padding: 1rem 2rem;
+      background: var(--black);
+      border-bottom: 4px solid var(--green);
+      animation: borderPulse 4s infinite;
+    }
+    @keyframes borderPulse {
+      0%,100% { border-color: var(--green); }
+      50% { border-color: var(--red); }
+    }
+    .title {
+      font-size: 1.5rem; font-weight: 600;
+      text-transform: uppercase;
+      color: var(--white);
+      padding: .5rem 1rem;
+      border: 2px solid var(--green);
+      border-radius: 4px;
+      animation: colorCycle 5s infinite;
+      margin-right: 1rem;
+    }
+    @keyframes colorCycle {
+      0%,100% { color: var(--white); border-color: var(--green); }
+      33%      { color: var(--red);   border-color: var(--red);   }
+      66%      { color: var(--green); border-color: var(--green); }
+    }
+    .logo img { height: 80px; transition: transform .3s; }
+    .logo img:hover { transform: scale(1.1); }
+    .spacer { width: 150px; }
+
+    /* Carousel */
+    #heroCarousel .carousel-item {
+      position: relative;
+    }
+    #heroCarousel .carousel-item img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  aspect-ratio: 16 / 9;
+  max-height: 40vh;
+}
+
+
+    #heroCarousel .carousel-caption {
+      background: rgba(0,0,0,0.4);
+      padding: 1rem;
+      border-radius: 4px;
+    }
+    #heroCarousel .top-caption {
+      top: 15%; bottom: auto;
+    }
+
+    /* Benefits */
+    .fa-2x { color: var(--green); }
+    .bg-light .fa { color: var(--green)!important; }
+    h5 { color: var(--black); }
+
+    /* Products */
+    #products { background: #f8f8f8; }
+    .all-products-heading {
+      color: var(--green);
+      font-size: 2.5rem; font-weight: 600;
+      text-transform: uppercase;
+      margin: 2rem auto;
+      text-align: center;
+      border-bottom: 4px solid var(--red);
+      display: inline-block; padding-bottom: .25rem;
+      animation: slideIn 1s ease-out;
+    }
+    @keyframes slideIn {
+      from { transform: translateY(-20px); opacity: 0; }
+      to   { transform: translateY(0);       opacity: 1; }
+    }
+    .product-item {
+      border: 2px solid transparent;
+      transition: border-color .3s, transform .3s;
+    }
+    .product-item:hover {
+      border-color: var(--green);
+      transform: translateY(-5px);
+    }
+    .product-item .card-title a,
+    .product-item .fw-bold {
+      color: var(--green) !important;
+    }
+     #heroCarousel .carousel-item img {
+    height: 850px;
+    object-fit: cover;
+    width: 100%;
+  }
+.product-item .card-title a,
+.product-item .fw-bold {
+  color: #000 !important;
+}
+/* Make header responsive */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .title {
+    margin-bottom: 0.5rem;
+  }
+
+  .logo {
+    margin-bottom: 0.5rem;
+  }
+
+  .spacer {
+    display: none;
+  }
+}
+
+/* Responsive adjustments for category cards */
+@media (max-width: 768px) {
+  .category-card {
+    width: 100% !important;
+    border-radius: 20px;
+  }
+
+  .category-card img {
+    height: 180px;
+  }
+}
+
+/* Make product cards more compact on phones */
+@media (max-width: 576px) {
+  .product-item {
+    padding: 0.75rem;
+  }
+
+  .product-item h6 {
+    font-size: 0.9rem;
+  }
+
+  .product-item img {
+    max-height: 160px;
+    object-fit: contain;
+  }
+
+  .btn-add-to-cart {
+    width: 100%;
+  }
+}
+
+/* Make banner responsive */
+.banner {
+  max-width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+}
+
+.banner img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="spacer"></div>
+    <div class="title">J&amp;M Stores</div>
+    <div class="logo flex-fill text-center">
+      <img src="J&M logo.png" alt="J&M Logo">
+    </div>
+    <div style="color:#fff; text-align:right;">
+      <small style="display:block; font-weight:400;">Customer Service</small>
+      <strong>+961 81 481 185</strong>
+    </div>
+    <div class="spacer"></div>
+  </header>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand d-lg-none text-white" href="#">J&amp;M</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item"><a class="nav-link" href="main.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link active" href="#products">Accessories</a></li>
+          <li class="nav-item"><a class="nav-link" href="cart.html">Cart</a></li>
+          <li class="nav-item"><a class="nav-link" href="checkout.html">Checkout</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+        <form class="d-flex mx-3" onsubmit="return false;">
+          <input class="form-control" placeholder="Search accessories">
+          <button class="btn btn-outline-secondary"><i class="fa fa-search"></i></button>
+        </form>
+        <a href="cart.html" class="btn btn-link text-white position-relative">
+          <i class="fa fa-shopping-cart fa-lg"></i>
+          <span id="cartBadge" class="badge bg-secondary rounded-circle position-absolute top-0 start-100 translate-middle">0</span>
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Carousel -->
+<div id="heroCarousel" class="carousel slide carousel-fade mb-4" data-bs-ride="carousel">
+  <div class="carousel-inner">
+
+    <div class="carousel-item active position-relative">
+      <img src="3.png" class="d-block" alt="Accessories Banner 1">
+      <div class="carousel-caption d-none d-md-block">
+        <h1>Accessories &amp; More</h1>
+        <p>Premium pieces to elevate your everyday style.</p>
+        <a class="btn btn-outline-light" href="#products">Shop Accessories</a>
+      </div>
+    </div>
+
+    <div class="carousel-item position-relative">
+      <img src="3.png" class="d-block" alt="Accessories Banner 2">
+      <div class="carousel-caption d-none d-md-block">
+        <h1>New Arrivals</h1>
+        <p>Discover our curated collection of on-trend accessories.</p>
+        <a class="btn btn-outline-light" href="#products">Browse Now</a>
+      </div>
+    </div>
+
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+    <span class="carousel-control-next-icon"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+  <!-- Featured Benefits -->
+  <section class="py-5 bg-light">
+    <div class="container">
+      <div class="row text-center g-4">
+        <div class="col-md-4">
+          <i class="fa fa-gem fa-2x mb-2"></i>
+          <h5>100% Genuine</h5>
+        </div>
+        <div class="col-md-4">
+          <i class="fa fa-shipping-fast fa-2x mb-2"></i>
+          <h5>7-10 Days Fast Shipping</h5>
+        </div>
+        <div class="col-md-4">
+          <i class="fa fa-headset fa-2x mb-2"></i>
+          <h5>24/7 Support</h5>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Product Grid -->
+  <section id="products" class="py-5">
+    <div class="container">
+      <div class="all-products-heading">All Accessories</div>
+      <div class="product-grid mt-4">
+              <section id="products" class="py-5">
+  <div class="container">
+    <h3 class="mb-4 text-center">COMING SOON!</h2>
+    <div class="row g-4">
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-dark text-light py-4">
+    <div class="container text-center">&copy; 2025 J&amp;M Stores. All rights reserved.</div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // cart badge
+    let cart = JSON.parse(localStorage.getItem('jmCart')||'[]');
+    document.getElementById('cartBadge').textContent =
+      cart.reduce((sum,i)=>sum + i.qty, 0);
+    // simple live-search
+    document.querySelector('input[placeholder^="Search"]').addEventListener('input', e => {
+      const term = e.target.value.toLowerCase();
+      document.querySelectorAll('.product-item').forEach(card => {
+        const txt = card.querySelector('.card-title a').textContent.toLowerCase();
+        card.style.display = txt.includes(term) ? '' : 'none';
+      });
+    });
+  </script>
+</body>
+</html>
